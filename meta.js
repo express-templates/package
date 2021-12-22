@@ -67,7 +67,7 @@ module.exports = {
       default: true,
     },
     mode: {
-      type: "checkbox",
+      type: "list",
       message: "Select mode for package:",
       choices: [
         {
