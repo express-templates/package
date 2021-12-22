@@ -52,7 +52,7 @@ const options = [
       commonjs(),
     ],
     output: [
-      {{#if_or mode "browser" "both"}}
+      {{#if_includes mode "browser" "both"}}
       {
         file: `dist/${name}.umd.js`,
         format: "umd",
@@ -61,8 +61,8 @@ const options = [
         banner,
         strict: true,
       },
-      {{/if_or}}
-      {{#if_or mode "node" "both"}}
+      {{/if_includes}}
+      {{#if_includes mode "node" "both"}}
       {
         file: `dist/${name}.cjs.js`,
         format: "cjs",
@@ -71,7 +71,7 @@ const options = [
         banner,
         strict: true,
       },
-      {{/if_or}}
+      {{/if_includes}}
       // {
       //   file: `dist/${name}.umd.min.js`,
       //   format: "umd",
@@ -131,7 +131,7 @@ const options = [
       commonjs(),
     ],
     output: [
-      {{#if_or mode "browser" "both"}}
+      {{#if_includes mode "browser" "both"}}
       {
         file: `dist/${name}.umd.min.js`,
         format: "umd",
@@ -140,7 +140,7 @@ const options = [
         banner,
         strict: true,
       },
-      {{/if_or}}
+      {{/if_includes}}
       {
         file: `dist/${name}.esm.min.js`,
         format: "esm",
