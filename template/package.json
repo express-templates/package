@@ -2,9 +2,9 @@
   "name": "{{ name }}",
   "version": "0.0.1",
   "author": "{{ author }}",
-  {{#if_or mode "browser" "both"}}
+  {{#if_xor mode "browser" "both"}}
   "main": "dist/{{ name }}.esm.js",
-  {{/if_or}}
+  {{/if_xor}}
   {{#if_eq mode "node"}}
   "main": "dist/{{ name }}.cjs",
   {{/if_eq}}
@@ -19,10 +19,10 @@
     "./": "./"
   },
   "module": "dist/{{ name }}.esm.js",
-  {{#if_or mode "browser" "both"}}
+  {{#if_xor mode "browser" "both"}}
   "unpkg": "dist/{{ name }}.umd.min.js",
   "jsdelivr": "dist/{{ name }}.umd.min.js",
-  {{/if_or}}
+  {{/if_xor}}
   {{#ts}}
   "types": "dist/fcanvas.d.ts",
   {{/ts}}
