@@ -5,9 +5,7 @@
   {{#if_or mode "browser" "both"}}
   "main": "dist/{{ name }}.esm.js",
   {{/if_or}}
-  {{#if_eq mode "node"}}
   "main": "dist/{{ name }}.cjs",
-  {{/if_eq}}
   "exports": {
     ".": {
       "import": "./dist/{{ name }}.esm.js",
